@@ -16,6 +16,8 @@ In all previous studies of grokking, the phenomenon has only been analysed in th
 
 ## (2) Grokking via data augmentation
 
-...
+In the previous exampel, we were inherently using a data augmentation technique we call "concealment." In concealment, one considers example vectors used by a given model (animation pause). Then one adds to the original task a set of random bits. We show that as one increases the number of these bits (animation pause), the grokking gap also increases (animation pause). Furthermore, for the range of values we tested, the trend appeared to be exponential.
 
 ## (3) Grokking and regularisation
+
+In most cases of grokking studied, the loss function (animation) used for optimisation included a data fit term (animation pause) and a regularisation term (animation pause). Concurrently to the publication of our paper, it was shown that one could relax the need for the regularisation term in neural networks.
