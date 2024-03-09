@@ -20,4 +20,12 @@ In the previous exampel, we were inherently using a data augmentation technique 
 
 ## (3) Grokking and regularisation
 
-In most cases of grokking studied, the loss function (animation) used for optimisation included a data fit term (animation pause) and a regularisation term (animation pause). Concurrently to the publication of our paper, it was shown that one could relax the need for the regularisation term in neural networks.
+In most cases of grokking studied, the loss function (animation) used for optimisation includes a data fit term (animation pause) and a regularisation term (animation pause). Concurrently to the publication of our paper, it was shown that one could relax the need for the regularisation term in neural networks. However, we find for many of our settings, an explicit regularisation term is needed.
+
+Take for example GP regression on a noisy sine wave. In this case, the negative marginal log likelihood (animation pause), the value we try to minimise, can be decomposed in two terms. The first term represents the data fit (animation pause) while the second term represents a complexity penalty (animation pause). (inlcude footnote about normalisation term). Let us examine the landscapes for these two terms with regard to the kernel hyperparameters (animation pause). As we can see, the data fit landscape has a basin of attraction for large output scale but for relatively small lengthscale. Alternatively, the complexity is large for small lengthscales and large outputscales. Let's track how three different initialisations evolve in the landscape (animation pause). As we can see, it is initialisation B, which started in a region of low-error high-complexity which exhibited grokking.
+
+This leads us to a possible mechanism of grokking which we present in our paper. Namely, that this a phenomenon which occurs due to a mismatch in the complexity and error landscape. That is, one will get grokking if low error high complexity solutions are relatively accessible but low error low complexity solutions are not. Due to the principle of parsimony, high complexity solutions should generalise poorly but low complexity solutions should generalise better. Thus, as the network transitions between the two we see grokking.
+
+## Conclusion
+
+...
