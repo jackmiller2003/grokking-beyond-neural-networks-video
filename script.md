@@ -1,14 +1,14 @@
 ## Introduction
 
-Grokking is a phenomenon originally found in the accuracy curves of neural networks. It is characterised by a signficiant gap between the performance of the network on a training set (animation pause) when compared to a validation set (animation pause). The difference in timing between these two curves is known as the grokking gap (animation pause).
+Hello everyone, in this video I will walkthrough the paper, Grokking Beyond Neural Networks, which I co-wrote with Charles O'Neill and Thang Bui.
 
-In our paper, Grokking Beyond Neural Networks, we demonstrate three important properties of the phenomenon:
+To begin with let's define grokking. This is a phenomenon originally found in the accuracy curves of neural networks. It is characterised by a signficiant gap between the performance of the network on a training set (animation pause) when compared to a validation set (animation pause). The difference in timing between these two curves is known as the grokking gap or delta k (animation pause).
 
-1. Grokking occurs outside of neural networks (animation pause). It can be found in Gaussian process regression, Gaussian process classification and linear regression.
+In our paper, we demonstrate three important properties of grokking:
+
+1. Grokking occurs outside of neural networks (animation pause). In fact, it can be found in Gaussian process regression, Gaussian process classification and linear regression.
 2. One can induce grokking via a particular data augmentation technique (animation pause). Specifically, if you append random bits to input examples, one sees a reliable increase in grokking.
 3. Explicit regularisation is required for grokking to occur in certain settings (animation pause).
-
-One can read more about these points in the paper linked in the description of this video.
 
 ## (1) Grokking outside of neural networks
 
@@ -16,7 +16,7 @@ In all previous studies of grokking, the phenomenon has only been analysed in th
 
 ## (2) Grokking via data augmentation
 
-In the previous exampel, we were inherently using a data augmentation technique we call "concealment." In concealment, one considers example vectors used by a given model (animation pause). Then one adds to the original task a set of random bits. We show that as one increases the number of these bits (animation pause), the grokking gap also increases (animation pause). Furthermore, for the range of values we tested, the trend appeared to be exponential.
+In the previous exampel, we were inherently using a data augmentation technique we call "concealment." In concealment, one considers example vectors used by a given model (animation pause). Then one adds to the original task a set of random bits. In the paper, we show that as one increases the number of these bits (animation pause), the grokking gap also increases (animation pause). Furthermore, for the range of values we tested, the trend appeared to be exponential.
 
 ## (3) Grokking and regularisation
 
