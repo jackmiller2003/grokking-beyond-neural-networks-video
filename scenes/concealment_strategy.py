@@ -5,6 +5,22 @@ class ConcealmentEffectOnGrokking(Scene):
     def construct(self):
         self.camera.background_color = BLACK
 
+        # Title that says "Grokking Occurs Beyond Neural Networks"
+        title = Text(
+            "Grokking is Induced via Concealment",
+            font_size=40,
+            color=WHITE,
+        )
+
+        # Fade in
+        self.play(Write(title))
+
+        # Wait for 3 seconds
+        self.wait(1)
+
+        # Fade out
+        self.play(FadeOut(title))
+
         # Initial vector setup, moved further to the left
         task_vector = VGroup(
             *[
@@ -43,13 +59,22 @@ class ConcealmentEffectOnGrokking(Scene):
         # Adjusting the position of the axes to avoid overlap
         axes = Axes(
             x_range=[0, 30, 5],
-            y_range=[0, 70, 10],
-            x_length=6,
-            y_length=4,
+            y_range=[0, 60, 10],
+            x_length=8,
+            y_length=5,
             axis_config={"color": WHITE},
         ).to_edge(DOWN, buff=1)
 
         graph_label = axes.get_axis_labels(x_label="Epochs", y_label="Accuracy")
+
+        # Move epochs to the left
+        graph_label[0].shift(LEFT * 0.5)
+        graph_label[1].shift(DOWN * 0.5)
+
+        # Make both labels smaller
+        graph_label[0].scale(0.8)
+        graph_label[1].scale(0.8)
+
         self.play(Create(axes), Write(graph_label))
 
         sigmoid_1 = axes.plot(
@@ -96,7 +121,10 @@ class ConcealmentEffectOnGrokking(Scene):
                 run_time=1,
             )
 
-        self.wait(2)
+        self.wait(1)
 
         # Optional fade out
         # self.play(FadeOut(VGroup(*self.mobjects)))
+
+        # Fade out everything
+        self.play(*[FadeOut(mob) for mob in self.mobjects])

@@ -7,7 +7,7 @@ class SummaryOfPaper(Scene):
         self.camera.background_color = BLACK
 
         # Title for the summary section
-        summary_title = Text("Summary of Paper", font_size=36, color=WHITE).to_edge(
+        summary_title = Text("Summary of Paper", font_size=40, color=WHITE).to_edge(
             UP, buff=0.5
         )
 
@@ -19,7 +19,7 @@ class SummaryOfPaper(Scene):
         bullet_points = [
             "1. Grokking occurs outside of neural networks",
             "2. Data augmentation induces grokking",
-            "3. Explicit regularisation is sometimes required",
+            "3. Grokking hypothesis under explicit regularisation",
         ]
 
         # Initialize an empty list to keep track of bullet point objects
@@ -27,7 +27,7 @@ class SummaryOfPaper(Scene):
 
         for i, point in enumerate(bullet_points):
             # Create a bullet point
-            bp_text = Text(point, font_size=24, color=WHITE)
+            bp_text = Text(point, font_size=36, color=WHITE)
 
             # If it's the first bullet point, position it relative to the title
             if i == 0:

@@ -5,6 +5,20 @@ class GrokkingScene(Scene):
     def construct(self):
         self.camera.background_color = BLACK
 
+        # Title that says "Grokking Occurs Beyond Neural Networks"
+        title = Text(
+            "Grokking Occurs Beyond Neural Networks", font_size=40, color=WHITE
+        )
+
+        # Fade in
+        self.play(Write(title))
+
+        # Wait for 3 seconds
+        self.wait(1)
+
+        # Fade out
+        self.play(FadeOut(title))
+
         # GP Box, Polynomial Curve, and Dots
         gp_box = Rectangle(
             width=4, height=3, color=WHITE

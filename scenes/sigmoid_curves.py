@@ -4,9 +4,11 @@ from manim import *
 class SigmoidCurves(Scene):
     def construct(self):
         # Initial text display
-        title_text = Text(
-            "Grokking Beyond Neural Networks", font_size=40, color=WHITE
-        ).move_to(ORIGIN)
+        title_text = (
+            Text("Grokking Beyond Neural Networks", font_size=40, color=WHITE)
+            .move_to(ORIGIN)
+            .shift(UP)
+        )
 
         # Subtitle text, smaller and below the main title
         subtitle_text = Text(
@@ -67,7 +69,10 @@ class SigmoidCurves(Scene):
         x_label = axes.get_x_axis_label("Epochs")
         y_label = axes.get_y_axis_label("Accuracy")
 
-        self.play(Create(x_label), Create(y_label))
+        # Shift x_label left a bit
+        x_label.shift(0.5 * LEFT)
+
+        self.play(FadeIn(x_label), FadeIn(y_label))
 
         # Hold the scene
         self.wait(0.5)
@@ -123,4 +128,6 @@ class SigmoidCurves(Scene):
             FadeOut(translated_sigmoid_curve_gen),
             FadeOut(connection_line),
             FadeOut(delta_k_label),
+            FadeOut(x_label),
+            FadeOut(y_label),
         )
